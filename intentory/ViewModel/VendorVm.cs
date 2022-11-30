@@ -1,22 +1,18 @@
-﻿
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using intentory.Models;
 
 namespace intentory.Models
 {
-    [Table("Inventory", Schema = "public")]
-    public class Inventory
+   
+    public class VendorVm
     {
         public long Id { get; set; }
 
         public string Name { get; set; }
 
-        public string Code { get; set; }
-
         public string Description { get; set; }
 
-        public string Measure { get; set; }
+        public List<Vendor> vendors { get; set; }
 
         public string Status { get; set; }
-
     }
 }

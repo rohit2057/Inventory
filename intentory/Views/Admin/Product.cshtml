@@ -1,42 +1,56 @@
-﻿
-@*@model IEnumerable<pits.Models.Author>*@
+﻿@model IEnumerable<intentory.Models.Inventory>
+@*@model ViewModel.InventoryVm*@
+@{
+    int a = 1;
+}
 
 <a asp-controller="Admin" asp-action="AddProduct" class="btn btn-primary">Add New Product</a>
-<table class="table table-stripped mt-2">
-    <thead class="bg-black">
-        <tr class="text-white">
-            <th>ID</th>
-            <th> Name</th>
-            <th>Code</th>
-            <th> Description</th>
-            <th>Unit of Measure</th>
-            <th>Status</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
 
-        
-    
-    
-        <tr>
-            <td>1</td>
-            <td>rr</td>
-            <td>rr</td>
-            <td>rr</td>
-            <td>rr</td>
-            <td>active</td>
-            
-            <td class="content-center">
-                
-                <a asp-area="" asp-controller="Admin"  asp-action="Delete"  class="btn btn-danger"> Delete</a>
-                <a asp-area="" asp-controller="Admin"  asp-action="Update"  class="btn btn-success"> Update</a>
+    <table class="table table-stripped mt-2">
+        <thead class="bg-black">
+            <tr class="text-white">
+                <th>SN</th>
+                <th> Name</th>
+                <th>Code</th>
+                <th> Description</th>
+                <th>Unit of Measure</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
 
 
-            </td>
-        </tr>
 
-    
+            @foreach (var item in Model)
+            {
+                <tr>
+                   @* @Html.DisplayFor(modelItem => item.Name)*@
+                    <td>@a</td>
+                    <td>@item.Name</td>
+                    <td>@item.Code</td>
+                    <td>@item.Description</td>
+                    <td>@item.Measure</td>
+                    <td>
+                        <a class="btn btn-warning"> @item.Status </a>
+                    </td>
+                   
 
-    </tbody
+                    <td class="content-center">
+
+                        <a asp-area="" asp-controller="Admin"  asp-action="Delete"  class="btn btn-danger"> Delete</a>
+                        <a asp-area="" asp-controller="Admin"  asp-action="Update"  class="btn btn-success"> Update</a>
+
+
+                    </td>
+             @{
+              a++;
+             }
+            </tr>
+           
+
+            }
+
+        </tbody
  </table>
+

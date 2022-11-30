@@ -10,6 +10,8 @@ namespace intentory.data
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
         public DbSet<Inventory> inventories { get; set; }
+        public DbSet<Vendor> vendors { get; set; }
+        public DbSet<Customer> customers { get; set; }
         
     }
 }

@@ -1,10 +1,8 @@
-﻿
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using intentory.Models;
 
-namespace intentory.Models
+namespace intentory.ViewModel
 {
-    [Table("Inventory", Schema = "public")]
-    public class Inventory
+    public class InventoryVm
     {
         public long Id { get; set; }
 
@@ -16,7 +14,8 @@ namespace intentory.Models
 
         public string Measure { get; set; }
 
-        public string Status { get; set; }
+        public List<Inventory> inventories { get; set; }
 
+        public string Status { get; set; }
     }
 }
