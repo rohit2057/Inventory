@@ -1,7 +1,15 @@
+using intentory.data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddControllersWithViews();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+builder.Services.AddDbContext<ApplicationDbContext>(x =>
+{
+    x.UseNpgsql(builder.Configuration.GetConnectionString("Crystal"));
+});
 
 var app = builder.Build();
 
@@ -21,5 +29,9 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Admin}/{action=Index}/{id?}");
 
 app.Run();
