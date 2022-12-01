@@ -233,14 +233,37 @@ namespace intentory.Controllers
             return View(vendor);
         }
 
+        [HttpPost]
+        public IActionResult ProductSales(ProductSalesVm vm) 
+        {
+            var viewmodel = new ProductSales()
+            {
+
+                CustomerName = vm.CustomerName,
+                ProductName = vm.ProductName,
+                MeasuringUnit = vm.MeasuringUnit,
+                Quantity = vm.Quantity,
+                SalesPrice = vm.SalesPrice,
+
+
+            };
+            Context.sales.Add(viewmodel);
+            Context.SaveChanges();
+
+            return RedirectToAction("ProductGroup");
+        }
+
         public IActionResult ProductSales ()
         {
-            return View();
+            var customer = new ProductSalesVm();
+            customer.customerList = Context.customers.ToList();
+            customer.productAdd = Context.products.ToList();
+            customer.Unitofmeasure = Context.products.ToList();
+            return View(customer);
         }
 
           public IActionResult Purchase() 
         {
-
             return View();
         }
         [HttpPost]
@@ -314,5 +337,139 @@ namespace intentory.Controllers
             return RedirectToAction("UnitOfMeasure");
         }
 
+        [HttpPost]
+        public IActionResult ProductGroupStatusChange(long id)
+        {
+            var details = Context.groups.Find(id);
+            if (details != null)
+            {
+                if (details.Status == "Active")
+                {
+                    details.Status = "Inactive";
+                    Context.SaveChanges();
+                    return RedirectToAction("ProductGroup");
+                }
+                else
+                {
+
+                    details.Status = "Active";
+                    Context.SaveChanges();
+
+                    return RedirectToAction("ProductGroup");
+                }
+            }
+            else
+            {
+            }
+            return RedirectToAction("ProductGroup");
+        }
+
+        [HttpPost]
+        public IActionResult UnitOfMeasureStatusChange(long id)
+        {
+            var details = Context.measures.Find(id);
+            if (details != null)
+            {
+                if (details.Status == "Active")
+                {
+                    details.Status = "Inactive";
+                    Context.SaveChanges();
+                    return RedirectToAction("UnitOfMeasure");
+                }
+                else
+                {
+
+                    details.Status = "Active";
+                    Context.SaveChanges();
+
+                    return RedirectToAction("UnitOfMeasure");
+                }
+            }
+            else
+            {
+            }
+            return RedirectToAction("UnitOfMeasure");
+        }
+
+        [HttpPost]
+        public IActionResult ProductStatusChange(long id)
+        {
+            var details = Context.products.Find(id);
+            if (details != null)
+            {
+                if (details.Status == "Active")
+                {
+                    details.Status = "Inactive";
+                    Context.SaveChanges();
+                    return RedirectToAction("Product");
+                }
+                else
+                {
+
+                    details.Status = "Active";
+                    Context.SaveChanges();
+
+                    return RedirectToAction("Product");
+                }
+            }
+            else
+            {
+            }
+            return RedirectToAction("Product");
+        }
+
+        [HttpPost]
+        public IActionResult VendorStatusChange(long id)
+        {
+            var details = Context.vendors.Find(id);
+            if (details != null)
+            {
+                if (details.Status == "Active")
+                {
+                    details.Status = "Inactive";
+                    Context.SaveChanges();
+                    return RedirectToAction("Vendor");
+                }
+                else
+                {
+
+                    details.Status = "Active";
+                    Context.SaveChanges();
+
+                    return RedirectToAction("Vendor");
+                }
+            }
+            else
+            {
+            }
+            return RedirectToAction("Vendor");
+        }
+
+        [HttpPost]
+        public IActionResult CustomerStatusChange(long id)
+        {
+            var details = Context.customers.Find(id);
+            if (details != null)
+            {
+                if (details.Status == "Active")
+                {
+                    details.Status = "Inactive";
+                    Context.SaveChanges();
+                    return RedirectToAction("Customer");
+                }
+                else
+                {
+
+                    details.Status = "Active";
+                    Context.SaveChanges();
+
+                    return RedirectToAction("Customer");
+                }
+            }
+            else
+            {
+            }
+            return RedirectToAction("Customer");
+        }
     }
 }

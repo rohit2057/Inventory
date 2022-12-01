@@ -28,13 +28,23 @@
                 <td>@item.Name</td>
                 <td>@item.Description</td>
                 <td>
-                    <a class="btn btn-warning"> @item.Status </a>
+                    @if (@item.Status == "Active")
+                    {
+                        <form asp-controller="Admin" asp-action="CustomerStatusChange" method="post">
+                            <input type="hidden" name="Id" value="@item.Id" />
+                            <button type="submit" class="btn btn-success">Active</button>
+                        </form>
+                    }
+                    else
+                    {
+                        <form asp-controller="Admin" asp-action="CustomerStatusChange" method="post">
+                            <input type="hidden" name="Id" value="@item.Id" />
+                            <button type="submit" class="btn btn-warning">Inactive</button>
+                        </form>
+                    }
                 </td>
 
-           @* <td>Abcd</td>
-            <td>Abcd</td>
-            <td>Abcd</td>*@
-
+ 
 
                 <td class="content-center">
 

@@ -1,1 +1,32 @@
-﻿product sales
+﻿@model intentory.Models.ProductSalesVm
+<form asp-controller="Admin" asp-action="ProductSales" method="post">
+
+    <div class="form-group">
+        <label for="exampleInputEmail1">Customer Name</label>
+        <select class="form-select" asp-for="CustomerName" asp-items="Model.customerlistOption()" aria-label="Default select example">
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Product Name</label>
+        <select class="form-select" asp-for="ProductName" asp-items="Model.ProductlistOption()" aria-label="Default select example">
+        </select>
+     </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Unit of measure</label>
+        <select class="form-select" asp-for="MeasuringUnit" asp-items="Model.UnitlistOption()" aria-label="Default select example">
+        </select>
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">Quantity</label>
+        <input type="text" class="form-control" id="quantity" name="quantity" />
+    </div>
+    <div class="form-group">
+        <label for="exampleInputEmail1">SalesPrice</label>
+        <input type="text" class="form-control" id="salesPrice" name="salesprice" />
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary">Sale</button>
+</form>
