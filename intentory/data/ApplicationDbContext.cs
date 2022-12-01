@@ -14,6 +14,7 @@ namespace intentory.data
         public DbSet<ProductAdd> products { get; set; }
         public DbSet<Vendor> vendors { get; set; }
         public DbSet<Customer> customers { get; set; }
+        public DbSet<ProductPurchase> purchases { get; set; }
 
     }
 }

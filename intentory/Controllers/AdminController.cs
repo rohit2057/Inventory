@@ -225,7 +225,12 @@ namespace intentory.Controllers
 
         public IActionResult ProductPurchase()
         {
-            return View();
+            var vendor = new ProductPurchaseVm();
+
+            vendor.vendorsList = Context.vendors.ToList();
+            vendor.productAdd = Context.products.ToList();
+            vendor.Unitofmeasure= Context.products.ToList();
+            return View(vendor);
         }
 
         public IActionResult ProductSales ()
@@ -237,6 +242,27 @@ namespace intentory.Controllers
         {
 
             return View();
+        }
+        [HttpPost]
+        public IActionResult Purchase(ProductPurchaseVm vm)
+        {
+            var viewmodel = new ProductPurchase()
+            {
+
+                VendorName = vm.VendorName,
+                ProductName = vm.ProductName,
+                MeasuringUnit = vm.MeasuringUnit,
+                Quantity = vm.Quantity,
+                PurchasePrice = vm.PurchasePrice,
+                SalesPrice = vm.SalesPrice,
+                
+
+            };
+            Context.purchases.Add(viewmodel);
+            Context.SaveChanges();
+
+            return RedirectToAction("ProductGroup");
+
         }
 
         [HttpGet]

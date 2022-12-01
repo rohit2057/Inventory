@@ -1,4 +1,5 @@
 ﻿using intentory.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace intentory.Models
 {
@@ -14,5 +15,7 @@ namespace intentory.Models
         public List<Vendor> vendors { get; set; }
 
         public string Status { get; set; }
+
+        
     }
 }
