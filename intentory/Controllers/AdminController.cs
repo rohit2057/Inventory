@@ -1,4 +1,5 @@
-﻿using intentory.data;
+﻿using AspNetCoreHero.ToastNotification.Abstractions;
+using intentory.data;
 using intentory.Models;
 
 using Microsoft.AspNetCore.Mvc;
@@ -11,11 +12,13 @@ namespace intentory.Controllers
     {
         private readonly ILogger<AdminController> _logger;
         private ApplicationDbContext Context { get; }
+        
 
         public AdminController(ILogger<AdminController> logger, ApplicationDbContext _context) 
         {
             _logger = logger;
            this.Context = _context;
+            
         }
 
         [HttpGet]
@@ -43,6 +46,7 @@ namespace intentory.Controllers
             Context.groups.Add(viewmodel);
             Context.SaveChanges();
 
+          
             return RedirectToAction("ProductGroup");
         }
 
@@ -470,6 +474,12 @@ namespace intentory.Controllers
             {
             }
             return RedirectToAction("Customer");
+        }
+
+        [HttpGet]
+        public IActionResult ProductSalesView() 
+        {
+            return View(Context.sales.ToList());
         }
     }
 }

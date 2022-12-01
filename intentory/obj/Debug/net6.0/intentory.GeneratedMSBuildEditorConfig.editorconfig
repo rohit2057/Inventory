@@ -64,6 +64,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdFNhbGVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[F:/projects/intentory/intentory/Views/Admin/ProductSalesView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdFNhbGVzVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [F:/projects/intentory/intentory/Views/Admin/ProductUpdate.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cUHJvZHVjdFVwZGF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
