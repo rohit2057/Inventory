@@ -37,6 +37,6 @@ app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Admin}/{action=Index}/{id?}");
+    pattern: "{controller=Admin}/{action=ProductGroup}/{id?}");
 
 app.Run();

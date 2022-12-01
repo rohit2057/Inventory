@@ -11,8 +11,8 @@ using intentory.data;
 namespace intentory.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221130145409_initial")]
-    partial class initial
+    [Migration("20221201041402_customer")]
+    partial class customer
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -49,7 +49,7 @@ namespace intentory.Migrations
                     b.ToTable("Customer", "public");
                 });
 
-            modelBuilder.Entity("intentory.Models.Inventory", b =>
+            modelBuilder.Entity("intentory.Models.Measure", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -65,7 +65,57 @@ namespace intentory.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("Measure")
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Measure", "public");
+                });
+
+            modelBuilder.Entity("intentory.Models.ProductAdd", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Status")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("UnitOfMeasure")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductAdd", "public");
+                });
+
+            modelBuilder.Entity("intentory.Models.ProductGroup", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -79,7 +129,7 @@ namespace intentory.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Inventory", "public");
+                    b.ToTable("ProductGroup", "public");
                 });
 
             modelBuilder.Entity("intentory.Models.Vendor", b =>

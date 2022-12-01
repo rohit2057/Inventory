@@ -1,20 +1,19 @@
 ﻿using intentory.Models;
 
-namespace intentory.ViewModel
+namespace intentory.Models
 {
-    public class InventoryVm
+
+    public class MeasureVm
     {
         public long Id { get; set; }
 
         public string Name { get; set; }
 
-        public string Code { get; set; }
-
         public string Description { get; set; }
 
-        public string Measure { get; set; }
+        public string Code { get; set; }
 
-        public List<Inventory> inventories { get; set; }
+        public List<Measure> measures { get; set; }
 
         public string Status { get; set; }
     }

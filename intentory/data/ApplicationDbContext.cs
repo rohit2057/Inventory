@@ -9,9 +9,11 @@ namespace intentory.data
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
 
-        public DbSet<Inventory> inventories { get; set; }
+        public DbSet<ProductGroup> groups { get; set; }
+        public DbSet<Measure> measures { get; set; }
+        public DbSet<ProductAdd> products { get; set; }
         public DbSet<Vendor> vendors { get; set; }
         public DbSet<Customer> customers { get; set; }
-        
+
     }
 }

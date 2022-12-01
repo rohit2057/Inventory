@@ -2,7 +2,7 @@
 
 namespace intentory.Models
 {
-   
+
     public class VendorVm
     {
         public long Id { get; set; }

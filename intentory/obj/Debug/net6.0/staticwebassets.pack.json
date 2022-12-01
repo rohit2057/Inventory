@@ -5,12 +5,236 @@
       "PackagePath": "staticwebassets\\intentory.bundle.scp.css"
     },
     {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\bootstrap-datepicker.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\bootstrap-datepicker.min.css"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\dataTables.bootstrap4.css",
+      "PackagePath": "staticwebassets\\assets\\css\\dataTables.bootstrap4.css"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\fonts\\Jost-600-Semi.woff2",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\Jost-600-Semi.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\fonts\\jost-500-medium.woff",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\jost-500-medium.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\fonts\\jost-500-medium.woff2",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\jost-500-medium.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\fonts\\jost-600-semi.woff",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\jost-600-semi.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\assets\\css\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\materialdesignicons.min.css",
+      "PackagePath": "staticwebassets\\assets\\css\\materialdesignicons.min.css"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\style.css",
+      "PackagePath": "staticwebassets\\assets\\css\\style.css"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\css\\vendor.bundle.base.css",
+      "PackagePath": "staticwebassets\\assets\\css\\vendor.bundle.base.css"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\fonts\\Jost-600-Semi.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\Jost-600-Semi.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\fonts\\jost-500-medium.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\jost-500-medium.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\fonts\\jost-500-medium.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\jost-500-medium.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\fonts\\jost-600-semi.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\jost-600-semi.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\fonts\\materialdesignicons-webfont.eot",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont.eot"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\fonts\\materialdesignicons-webfont.ttf",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont.ttf"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\fonts\\materialdesignicons-webfont.woff",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\fonts\\materialdesignicons-webfont.woff2",
+      "PackagePath": "staticwebassets\\assets\\fonts\\materialdesignicons-webfont.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\images\\logo-mini.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\logo-mini.svg"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\images\\logo.png",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.png"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\images\\logo.svg",
+      "PackagePath": "staticwebassets\\assets\\images\\logo.svg"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\Chart.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\Chart.min.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\bootstrap-datepicker.min.js",
+      "PackagePath": "staticwebassets\\assets\\js\\bootstrap-datepicker.min.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\dashboard.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dashboard.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\data-table.js",
+      "PackagePath": "staticwebassets\\assets\\js\\data-table.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\dataTables.bootstrap4.js",
+      "PackagePath": "staticwebassets\\assets\\js\\dataTables.bootstrap4.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\hoverable-collapse.js",
+      "PackagePath": "staticwebassets\\assets\\js\\hoverable-collapse.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\jquery.dataTables.js",
+      "PackagePath": "staticwebassets\\assets\\js\\jquery.dataTables.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\off-canvas.js",
+      "PackagePath": "staticwebassets\\assets\\js\\off-canvas.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\settings.js",
+      "PackagePath": "staticwebassets\\assets\\js\\settings.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\template.js",
+      "PackagePath": "staticwebassets\\assets\\js\\template.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\todolist.js",
+      "PackagePath": "staticwebassets\\assets\\js\\todolist.js"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\assets\\js\\vendor.bundle.base.js",
+      "PackagePath": "staticwebassets\\assets\\js\\vendor.bundle.base.js"
+    },
+    {
       "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Bold.eot",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Bold.eot"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Bold.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Bold.ttf"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Bold.woff",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Bold.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Bold.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Bold.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Light.eot",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Light.eot"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Light.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Light.ttf"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Light.woff",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Light.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Light.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Light.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Medium.eot",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Medium.eot"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Medium.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Medium.ttf"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Medium.woff",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Medium.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Medium.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Medium.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Regular.eot",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Regular.eot"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Regular.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Regular.ttf"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Regular.woff",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Regular.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Regular.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Regular.woff2"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Thin.eot",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Thin.eot"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Thin.ttf",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Thin.ttf"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Thin.woff",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Thin.woff"
+    },
+    {
+      "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\fonts\\Roboto\\Roboto-Thin.woff2",
+      "PackagePath": "staticwebassets\\fonts\\Roboto\\Roboto-Thin.woff2"
     },
     {
       "Id": "F:\\projects\\intentory\\intentory\\wwwroot\\js\\site.js",

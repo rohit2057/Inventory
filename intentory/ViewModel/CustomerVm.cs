@@ -11,7 +11,7 @@ namespace intentory.Models
 
         public string Description { get; set; }
 
-        public List<Vendor> customers { get; set; }
+        public List<Customer> customers { get; set; }
 
         public string Status { get; set; }
     }
