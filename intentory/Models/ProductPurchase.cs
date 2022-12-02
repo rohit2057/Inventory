@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using intentory.Models;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace intentory.Models
 {
@@ -7,9 +8,13 @@ namespace intentory.Models
     {
         public long? Id { get; set; }
 
-        public string VendorName { get; set; }
+        public virtual Vendor Vendor { get; set; }
+        public long? VendorId { get; set; }
 
-        public string ProductName { get; set; }
+        public virtual ProductAdd ProductAdd { get; set; }
+        public long? ProductAddId { get; set; }
+
+        
 
         public string MeasuringUnit { get; set; }
 

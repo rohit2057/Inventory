@@ -4,7 +4,7 @@
     int a = 1;
 }
 
-<a asp-controller="Admin" asp-action="ProductSales" class="btn btn-primary">Sales</a>
+<a asp-controller="Admin" asp-action="ProductSales" class="btn btn-primary">Sale</a>
 <table class="table table-stripped mt-2">
     <thead class="bg-black">
         <tr class="text-black">
@@ -17,29 +17,26 @@
         </tr>
     </thead>
     <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@a</td>
+                <td>@item.Customer.Name</td>
+                <td>@item.ProductAdd.Name</td>
+                <td>@item.ProductAdd.UnitOfMeasure</td>
+                <td>@item.Quantity</td>
+                <td>@item.SalesPrice</td>
 
-        
-    
-      @foreach (var item in Model)
-            {
-        <tr>
-                    <td>@a</td>
-                    <td>@item.CustomerName</td>
-                    <td>@item.ProductName</td>
-                    <td>@item.MeasuringUnit</td>
-                    <td>@item.Quantity</td>
-                    <td>@item.SalesPrice</td>
-            
-          
 
-             @{
-              a++;
-             }
-        </tr>
 
-            }
+                @{
+                    a++;
+                }
+            </tr>
+
+        }
 
     </tbody>
- </table>
+</table>
 
 

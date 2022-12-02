@@ -12,7 +12,7 @@ using intentory.data;
 namespace intentory.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20221202041113_initial ")]
+    [Migration("20221202080753_initial ")]
     partial class initial
     {
         /// <inheritdoc />
@@ -141,9 +141,8 @@ namespace intentory.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<long?>("ProductAddId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("PurchasePrice")
                         .IsRequired()
@@ -157,11 +156,14 @@ namespace intentory.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("VendorName")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<long?>("VendorId")
+                        .HasColumnType("bigint");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductAddId");
+
+                    b.HasIndex("VendorId");
 
                     b.ToTable("ProductPurchase", "public");
                 });
@@ -174,16 +176,15 @@ namespace intentory.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long?>("Id"));
 
-                    b.Property<string>("CustomerName")
-                        .HasColumnType("text");
+                    b.Property<long?>("CustomerId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("MeasuringUnit")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<string>("ProductName")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<long>("ProductAddId")
+                        .HasColumnType("bigint");
 
                     b.Property<string>("Quantity")
                         .IsRequired()
@@ -194,6 +195,10 @@ namespace intentory.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("CustomerId");
+
+                    b.HasIndex("ProductAddId");
 
                     b.ToTable("ProductSales", "public");
                 });
@@ -220,6 +225,38 @@ namespace intentory.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Vendor", "public");
+                });
+
+            modelBuilder.Entity("intentory.Models.ProductPurchase", b =>
+                {
+                    b.HasOne("intentory.Models.ProductAdd", "ProductAdd")
+                        .WithMany()
+                        .HasForeignKey("ProductAddId");
+
+                    b.HasOne("intentory.Models.Vendor", "Vendor")
+                        .WithMany()
+                        .HasForeignKey("VendorId");
+
+                    b.Navigation("ProductAdd");
+
+                    b.Navigation("Vendor");
+                });
+
+            modelBuilder.Entity("intentory.Models.ProductSales", b =>
+                {
+                    b.HasOne("intentory.Models.Customer", "Customer")
+                        .WithMany()
+                        .HasForeignKey("CustomerId");
+
+                    b.HasOne("intentory.Models.ProductAdd", "ProductAdd")
+                        .WithMany()
+                        .HasForeignKey("ProductAddId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Customer");
+
+                    b.Navigation("ProductAdd");
                 });
 #pragma warning restore 612, 618
         }

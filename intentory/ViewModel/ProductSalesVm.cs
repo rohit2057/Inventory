@@ -8,9 +8,9 @@ namespace intentory.Models
     {
         public long? Id { get; set; }
 
-        public string? CustomerName { get; set; }
+        public long? CustomerId { get; set; }
 
-        public string ProductName { get; set; }
+        public long ProductId { get; set; }
 
         public string MeasuringUnit { get; set; }
 
@@ -31,5 +31,8 @@ namespace intentory.Models
         public List<ProductAdd> Unitofmeasure { get; set; }
 
         public SelectList UnitlistOption() => new SelectList(Unitofmeasure, nameof(ProductAdd.Id), nameof(ProductAdd.UnitOfMeasure));
+
+        public ProductAddVm products { get; set; }
+        public CustomerVm customers { get; set; }
     }
 }

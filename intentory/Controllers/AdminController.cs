@@ -233,63 +233,57 @@ namespace intentory.Controllers
 
             vendor.vendorsList = Context.vendors.ToList();
             vendor.productAdd = Context.products.ToList();
-            vendor.Unitofmeasure= Context.products.ToList();
+            vendor.Unitofmeasure = Context.products.ToList();
             return View(vendor);
         }
 
         [HttpPost]
-        public IActionResult ProductSales(ProductSalesVm vm) 
-        {
-            var viewmodel = new ProductSales()
-            {
-
-                CustomerName = vm.CustomerName,
-                ProductName = vm.ProductName,
-                MeasuringUnit = vm.MeasuringUnit,
-                Quantity = vm.Quantity,
-                SalesPrice = vm.SalesPrice,
-
-
-            };
-            Context.sales.Add(viewmodel);
-            Context.SaveChanges();
-
-            return RedirectToAction("ProductGroup");
-        }
-
-        public IActionResult ProductSales ()
-        {
-            var customer = new ProductSalesVm();
-            customer.customerList = Context.customers.ToList();
-            customer.productAdd = Context.products.ToList();
-            customer.Unitofmeasure = Context.products.ToList();
-            return View(customer);
-        }
-
-          public IActionResult Purchase() 
-        {
-            return View();
-        }
-        [HttpPost]
-        public IActionResult Purchase(ProductPurchaseVm vm)
+        public IActionResult ProductPurchase(ProductPurchaseVm vm)
         {
             var viewmodel = new ProductPurchase()
             {
 
-                VendorName = vm.VendorName,
-                ProductName = vm.ProductName,
+                VendorId = vm.VendorId,
+                ProductAddId = vm.ProductId,
                 MeasuringUnit = vm.MeasuringUnit,
                 Quantity = vm.Quantity,
                 PurchasePrice = vm.PurchasePrice,
                 SalesPrice = vm.SalesPrice,
-                
 
             };
             Context.purchases.Add(viewmodel);
             Context.SaveChanges();
 
-            return RedirectToAction("ProductGroup");
+            return RedirectToAction("ProductPurchaseView");
+        }
 
+        [HttpPost]
+        public IActionResult ProductSales(ProductSalesVm vm)
+        {
+            var viewmodel = new ProductSales()
+            {
+
+                CustomerId = vm.CustomerId,
+                ProductAddId = vm.ProductId,
+                MeasuringUnit = vm.MeasuringUnit,
+                Quantity = vm.Quantity,
+                SalesPrice = vm.SalesPrice,
+
+            };
+            Context.sales.Add(viewmodel);
+            Context.SaveChanges();
+
+            return RedirectToAction("ProductSalesView");
+        }
+
+        public IActionResult ProductSales()
+        {
+            var details = new ProductSalesVm();
+            details.productAdd = Context.products.ToList();
+            details.customerList = Context.customers.ToList();
+            details.Unitofmeasure = Context.products.ToList();
+
+            return View(details);
         }
 
         [HttpGet]
@@ -477,15 +471,19 @@ namespace intentory.Controllers
         }
 
         [HttpGet]
-        public IActionResult ProductSalesView() 
+        public IActionResult ProductSalesView()
         {
-            return View(Context.sales.ToList());
+            var sales = Context.sales.Include("ProductAdd").Include("Customer").ToList();
+            return View(sales);
         }
 
         [HttpGet]
         public IActionResult ProductPurchaseView()
         {
-            return View(Context.purchases.ToList());
+            var purchases = Context.purchases.Include("ProductAdd").Include("Vendor").ToList();
+            return View(purchases);
         }
+
+
     }
 }

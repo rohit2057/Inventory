@@ -7,9 +7,12 @@ namespace intentory.Models
     {
         public long? Id { get; set; }
 
-        public string? CustomerName { get; set; }
+        public virtual Customer Customer { get; set; }
+        public long? CustomerId { get; set; }
 
-        public string ProductName { get; set; }
+        public virtual ProductAdd ProductAdd { get; set; }
+        public long ProductAddId { get; set; }
+
 
         public string MeasuringUnit { get; set; }
 
@@ -17,7 +20,9 @@ namespace intentory.Models
 
         public string SalesPrice { get; set; }
 
-        
+
+
+
 
     }
 }
