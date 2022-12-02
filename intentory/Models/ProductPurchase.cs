@@ -5,7 +5,7 @@ namespace intentory.Models
     [Table("ProductPurchase", Schema = "public")]
     public class ProductPurchase
     {
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         public string VendorName { get; set; }
 

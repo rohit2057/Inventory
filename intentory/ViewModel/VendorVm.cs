@@ -6,7 +6,7 @@ namespace intentory.Models
 
     public class VendorVm
     {
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         public string Name { get; set; }
 
@@ -14,7 +14,7 @@ namespace intentory.Models
 
         public List<Vendor> vendors { get; set; }
 
-        public string Status { get; set; }
+        public string? Status { get; set; }
 
         
     }

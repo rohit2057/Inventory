@@ -5,7 +5,7 @@ namespace intentory.Models
 
     public class ProductGroupVm
     {
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         public string Name { get; set; }
 
@@ -13,6 +13,6 @@ namespace intentory.Models
 
         public List<ProductGroup> groups { get; set; }
 
-        public string Status { get; set; }
+        public string? Status { get; set; }
     }
 }

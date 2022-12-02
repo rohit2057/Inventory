@@ -481,5 +481,11 @@ namespace intentory.Controllers
         {
             return View(Context.sales.ToList());
         }
+
+        [HttpGet]
+        public IActionResult ProductPurchaseView()
+        {
+            return View(Context.purchases.ToList());
+        }
     }
 }

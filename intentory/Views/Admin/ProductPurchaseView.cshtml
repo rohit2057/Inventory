@@ -1,0 +1,47 @@
+﻿@model IEnumerable<intentory.Models.ProductPurchase>
+
+@{
+    int a = 1;
+}
+
+<a asp-controller="Admin" asp-action="ProductPurchase" class="btn btn-primary">Purchase</a>
+<table class="table table-stripped mt-2">
+    <thead class="bg-black">
+        <tr class="text-black">
+            <th>ID</th>
+            <th> Name</th>
+            <th> Product Name</th>
+            <th>Measuring Unit</th>
+            <th>Quantity</th>
+            <th>Purchase Price</th>
+            <th>Sales Price</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@a</td>
+                <td>@item.VendorName</td>
+                <td>@item.ProductName</td>
+                <td>@item.MeasuringUnit</td>
+                <td>@item.Quantity</td>
+                <td>@item.PurchasePrice</td>
+                <td>@item.SalesPrice</td>
+
+
+
+                @{
+                    a++;
+                }
+            </tr>
+
+        }
+
+    </tbody>
+</table>
+
+

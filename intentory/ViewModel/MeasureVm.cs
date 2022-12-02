@@ -5,7 +5,7 @@ namespace intentory.Models
 
     public class MeasureVm
     {
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         public string Name { get; set; }
 
@@ -15,6 +15,6 @@ namespace intentory.Models
 
         public List<Measure> measures { get; set; }
 
-        public string Status { get; set; }
+        public string? Status { get; set; }
     }
 }

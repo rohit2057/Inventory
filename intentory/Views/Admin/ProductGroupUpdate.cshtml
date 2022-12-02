@@ -6,7 +6,7 @@
 
     <form method="post" asp-controller="Admin" asp-action="ProductGroupUpdate">
         <label for="id"> Id</label><br>
-        <input type="text" value="@Model.Id" id="id" name="id"><br>
+        <input type="text" value="@Model.Id" id="id" name="id" disabled><br>
 
         <label for="name"> name:</label><br>
         <input type="text"  value="@Model.Name" id="name" name="name" ><br>
@@ -15,7 +15,7 @@
         <input type="text" value="@Model.Description" id="description" name="description"><br>
 
         <label for="Status">Status</label><br>
-        <input type="text" value="@Model.Status" id="status" name="status"><br>
+        <input type="text" value="@Model.Status" id="status" name="status" disabled><br>
 
 
         <input type="submit" value="update" class="btn btn-primary">

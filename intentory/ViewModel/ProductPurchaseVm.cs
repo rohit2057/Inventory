@@ -6,7 +6,7 @@ namespace intentory.Models
     
     public class ProductPurchaseVm
     {
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         public string VendorName { get; set; }
 

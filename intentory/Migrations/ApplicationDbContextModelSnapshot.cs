@@ -24,11 +24,11 @@ namespace intentory.Migrations
 
             modelBuilder.Entity("intentory.Models.Customer", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long?>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -39,7 +39,6 @@ namespace intentory.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -49,11 +48,11 @@ namespace intentory.Migrations
 
             modelBuilder.Entity("intentory.Models.Measure", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long?>("Id"));
 
                     b.Property<string>("Code")
                         .IsRequired()
@@ -68,7 +67,6 @@ namespace intentory.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -78,11 +76,11 @@ namespace intentory.Migrations
 
             modelBuilder.Entity("intentory.Models.ProductAdd", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long?>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -93,7 +91,6 @@ namespace intentory.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.Property<string>("UnitOfMeasure")
@@ -107,11 +104,11 @@ namespace intentory.Migrations
 
             modelBuilder.Entity("intentory.Models.ProductGroup", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long?>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -122,7 +119,6 @@ namespace intentory.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");
@@ -132,11 +128,11 @@ namespace intentory.Migrations
 
             modelBuilder.Entity("intentory.Models.ProductPurchase", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long?>("Id"));
 
                     b.Property<string>("MeasuringUnit")
                         .IsRequired()
@@ -201,11 +197,11 @@ namespace intentory.Migrations
 
             modelBuilder.Entity("intentory.Models.Vendor", b =>
                 {
-                    b.Property<long>("Id")
+                    b.Property<long?>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("bigint");
 
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("Id"));
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long?>("Id"));
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -216,7 +212,6 @@ namespace intentory.Migrations
                         .HasColumnType("text");
 
                     b.Property<string>("Status")
-                        .IsRequired()
                         .HasColumnType("text");
 
                     b.HasKey("Id");

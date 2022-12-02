@@ -5,7 +5,7 @@ namespace intentory.Models
 
     public class CustomerVm
     {
-        public long Id { get; set; }
+        public long? Id { get; set; }
 
         public string Name { get; set; }
 
@@ -13,6 +13,6 @@ namespace intentory.Models
 
         public List<Customer> customers { get; set; }
 
-        public string Status { get; set; }
+        public string? Status { get; set; }
     }
 }
