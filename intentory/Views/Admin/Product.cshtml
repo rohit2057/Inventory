@@ -4,7 +4,7 @@
     int a = 1;
 }
 
-<a asp-controller="Admin" asp-action="ProductAdd" class="btn btn-primary">Add New </a>
+<a asp-controller="Admin" asp-action="ProductAdd" class="btn btn-primary">Add New Product </a>
 
    <table class="table table-stripped mt-2">
     <thead class="bg-black">
@@ -51,7 +51,7 @@
                     <td class="content-center">
 
                     <a asp-controller="Admin" asp-action="ProductDelete" asp-route-id="@item.Id" class="btn btn-danger"> Delete</a>
-                        <a asp-controller="Admin" asp-action="ProductUpdate" asp-route-id="@item.Id" class="btn btn-success"> Update</a>
+                    <a asp-controller="Admin" asp-action="ProductUpdate" asp-route-id="@item.Id" class="btn btn-success"> Update</a>
 
 
                     </td>

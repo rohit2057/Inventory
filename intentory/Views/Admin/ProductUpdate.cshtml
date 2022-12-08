@@ -1,31 +1,28 @@
-﻿
-<html>
-<body>
+﻿<html>
+    <body>
 
-    <h2>update Forms</h2>
-
+    <h2>product update Forms</h2>
+ 
     <form method="post" asp-controller="Admin" asp-action="ProductUpdate">
-        <label for="id"> Id</label><br>
-        <input type="text" value="@Model.Id" id="id" name="id" disabled><br>
-
-        <label for="name"> name:</label><br>
+    <div class="form-group">
+        <label for="name"> name</label><br>
         <input type="text"  value="@Model.Name" id="name" name="name" ><br>
+     </div>
+ 
 
+    <div class="form-group">
         <label for="Description">Description</label><br>
         <input type="text" value="@Model.Description" id="description" name="description"><br>
+    </div>
 
+
+    <div class="form-group">
         <label for="Measure">Unit Of Measure</label><br>
         <input type="text" value="@Model.UnitOfMeasure" id="UnitOfMeasure" name="UnitOfMeasure"><br>
-
-
-        <label for="Status">Status</label><br>
-        <input type="text" value="@Model.Status" id="status" name="status" disabled><br>
-
-
+    </div>
+    
         <input type="submit" value="update" class="btn btn-primary">
     </form>
-
-
 
 </body>
 </html>

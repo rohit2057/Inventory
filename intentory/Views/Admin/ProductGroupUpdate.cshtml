@@ -2,23 +2,17 @@
 <html>
 <body>
 
-    <h2>update Forms</h2>
+    <h2>Product Group update Forms</h2>
 
     <form method="post" asp-controller="Admin" asp-action="ProductGroupUpdate">
-        <label for="id"> Id</label><br>
-        <input type="text" value="@Model.Id" id="id" name="id" disabled><br>
-
-        <label for="name"> name:</label><br>
-        <input type="text"  value="@Model.Name" id="name" name="name" ><br>
+     
+        <label for="name"> name</label><br>
+        <input type="text" class="form-control" value="@Model.Name" id="name" name="name"><br>
 
         <label for="Description">Description</label><br>
-        <input type="text" value="@Model.Description" id="description" name="description"><br>
+        <input type="text" class="form-control"  value="@Model.Description" id="description" name="description"><br>
 
-        <label for="Status">Status</label><br>
-        <input type="text" value="@Model.Status" id="status" name="status" disabled><br>
-
-
-        <input type="submit" value="update" class="btn btn-primary">
+        <input type="submit"  value="update" class="btn btn-primary">
     </form>
 
 
