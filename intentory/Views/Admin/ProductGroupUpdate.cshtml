@@ -1,12 +1,9 @@
 ﻿
-<html>
-<body>
-
     <h2>Product Group update Forms</h2>
 
     <form method="post" asp-controller="Admin" asp-action="ProductGroupUpdate">
      
-        <label for="name"> name</label><br>
+        <label for="name"> Name</label><br>
         <input type="text" class="form-control" value="@Model.Name" id="name" name="name"><br>
 
         <label for="Description">Description</label><br>
@@ -14,8 +11,3 @@
 
         <input type="submit"  value="update" class="btn btn-primary">
     </form>
-
-
-
-</body>
-</html>
