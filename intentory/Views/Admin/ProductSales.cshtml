@@ -2,28 +2,28 @@
 <form asp-controller="Admin" asp-action="ProductSales" method="post">
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Customer Name</label>
+        <label for="customername">Customer Name</label>
         <select class="form-control" asp-for="CustomerId" asp-items="Model.customerlistOption()" aria-label="Default select example">
         </select>
 
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Product Name</label>
+        <label for="productname">Product Name</label>
         <select class="form-control" asp-for="ProductId" asp-items="Model.ProductlistOption()" aria-label="Default select example">
         </select>
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Unit of measure</label>
+        <label for="unitofmeasure">Unit of measure</label>
         <select class="form-control" asp-for="MeasuringUnit" asp-items="Model.UnitlistOption()" aria-label="Default select example">
         </select>
 
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Quantity</label>
+        <label for="quantity">Quantity</label>
         <input type="text" class="form-control" id="quantity" name="quantity" />
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">SalesPrice</label>
+        <label for="salesprice">SalesPrice</label>
         <input type="text" class="form-control" id="salesPrice" name="salesprice" />
     </div>
 

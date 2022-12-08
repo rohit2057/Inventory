@@ -2,21 +2,21 @@
 <form asp-controller="Admin" asp-action="ProductPurchase" method="post">
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Name</label>
+        <label for="name">Name</label>
         <select class="form-control" asp-for="VendorId" asp-items="Model.vendorlistOption()" aria-label="Default select example">
            
         </select>
        
     </div>
      <div class="form-group">
-        <label for="exampleInputEmail1">Product</label>
+        <label for="product">Product</label>
         <select class="form-control" asp-for="ProductId" asp-items="Model.ProductlistOption()" aria-label="Default select example">
 
         </select>
 
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">Unit of measure</label>
+        <label for="unitofmeasure">Unit of measure</label>
         <select class="form-control" asp-for="MeasuringUnit" asp-items="Model.UnitlistOption()" aria-label="Default select example">
         </select>
 
@@ -24,15 +24,15 @@
     <br>
 
     <div class="form-group">
-        <label for="exampleInputEmail1">Quantity</label>
+        <label for="quantity">Quantity</label>
         <input type="text" class="form-control" id="quantity" name="quantity" />
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">PurchasePrice</label>
+        <label for="purchaseprice">PurchasePrice</label>
         <input type="text" class="form-control" id="PurchasePrice" name="PurchasePrice" />
     </div>
     <div class="form-group">
-        <label for="exampleInputEmail1">SalesPrice</label>
+        <label for="salesprice">SalesPrice</label>
         <input type="text" class="form-control" id="SalesPrice" name="SalesPrice" />
     </div>
     <br>
