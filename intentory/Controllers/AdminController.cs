@@ -24,7 +24,7 @@ namespace intentory.Controllers
         [HttpGet]
         public IActionResult Groups()
         {
-            //return View();
+            
             return View(Context.groups.ToList());
         }
 
@@ -173,11 +173,20 @@ namespace intentory.Controllers
 
         public IActionResult ProductDelete(long id)
         {
-            ProductAdd auth = Context.products.Find(id);
-            Context.Entry(auth).State = EntityState.Deleted;
-            Context.SaveChanges();
-            //_notyf.Error("Product Deleted Successfully");
-            return RedirectToAction("UnitOfMeasure");
+            try
+            {
+                ProductAdd auth = Context.products.Find(id);
+                Context.Entry(auth).State = EntityState.Deleted;
+                Context.SaveChanges();
+                _notyf.Error("Product Deleted Successfully");
+                return RedirectToAction("Product");
+            }
+            catch( Exception ex)
+            {
+                _notyf.Error("Product in use, cannot be deleted");
+                return RedirectToAction("Product");
+            }
+           
         }
 
         [HttpGet]
@@ -225,11 +234,19 @@ namespace intentory.Controllers
 
         public IActionResult VendorDelete(long id)
         {
-            Vendor auth = Context.vendors.Find(id);
-            Context.Entry(auth).State = EntityState.Deleted;
-            Context.SaveChanges();
-            _notyf.Error("Vendor Deleted Successfully");
-            return RedirectToAction("Vendor");
+            try
+            {
+                Vendor auth = Context.vendors.Find(id);
+                Context.Entry(auth).State = EntityState.Deleted;
+                Context.SaveChanges();
+                _notyf.Error("Vendor Deleted Successfully");
+                return RedirectToAction("Vendor");
+            }
+            catch(Exception ex)
+            {
+                _notyf.Error("Vendor in use, cannot be Deleted ");
+                return RedirectToAction("Vendor");
+            }
         }
 
         public IActionResult ProductPurchase()
@@ -328,17 +345,25 @@ namespace intentory.Controllers
         {
             Context.Entry(c).State = EntityState.Modified;
             Context.SaveChanges();
-            _notyf.Warning("Customer Added Updated Successfully");
+            _notyf.Warning("Customer Updated Successfully");
             return RedirectToAction("Customer");
         }
 
         public IActionResult CustomerDelete(long id)
         {
-            Customer auth = Context.customers.Find(id);
-            Context.Entry(auth).State = EntityState.Deleted;
-            Context.SaveChanges();
-            _notyf.Error("Customer Deleted Successfully");
-            return RedirectToAction("Customer");
+            try
+            {
+                Customer auth = Context.customers.Find(id);
+                Context.Entry(auth).State = EntityState.Deleted;
+                Context.SaveChanges();
+                _notyf.Error("Customer Deleted Successfully");
+                return RedirectToAction("Customer");
+            }
+           catch(Exception ex)
+            {
+                _notyf.Error("Customer in use, cannot be deleted");
+                return RedirectToAction("Customer");
+            }
         }
 
         [HttpPost]
@@ -351,7 +376,7 @@ namespace intentory.Controllers
                 {
                     details.Status = "Inactive";
                     Context.SaveChanges();
-                    return RedirectToAction("ProductGroup");
+                    return RedirectToAction("Groups");
                 }
                 else
                 {
@@ -359,13 +384,13 @@ namespace intentory.Controllers
                     details.Status = "Active";
                     Context.SaveChanges();
 
-                    return RedirectToAction("ProductGroup");
+                    return RedirectToAction("Groups");
                 }
             }
             else
             {
             }
-            return RedirectToAction("ProductGroup");
+            return RedirectToAction("Groups");
         }
 
         [HttpPost]
