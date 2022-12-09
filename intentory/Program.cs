@@ -1,3 +1,5 @@
+using AspNetCoreHero.ToastNotification;
+using AspNetCoreHero.ToastNotification.Extensions;
 using intentory.data;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,6 +14,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(x =>
     x.UseNpgsql(builder.Configuration.GetConnectionString("Crystal"));
 });
 
+builder.Services.AddNotyf(config => { config.DurationInSeconds = 10; config.IsDismissable = true; config.Position = NotyfPosition.BottomRight; });
 var app = builder.Build();
 
 app.Services.CreateScope().ServiceProvider.GetService<DbContext>().Database.Migrate();
@@ -33,10 +36,12 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+app.UseNotyf();
+
 app.MapRazorPages();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Admin}/{action=ProductGroup}/{id?}");
+    pattern: "{controller=Admin}/{action=Groups}/{id?}");
 
 app.Run();

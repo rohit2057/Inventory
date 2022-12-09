@@ -12,17 +12,17 @@ namespace intentory.Controllers
     {
         private readonly ILogger<AdminController> _logger;
         private ApplicationDbContext Context { get; }
-        
 
-        public AdminController(ILogger<AdminController> logger, ApplicationDbContext _context) 
+        private readonly INotyfService _notyf;
+        public AdminController(ILogger<AdminController> logger, ApplicationDbContext _context, INotyfService notyfService) 
         {
             _logger = logger;
            this.Context = _context;
-            
+            _notyf = notyfService; 
         }
 
         [HttpGet]
-        public IActionResult ProductGroup()
+        public IActionResult Groups()
         {
             //return View();
             return View(Context.groups.ToList());
@@ -46,8 +46,8 @@ namespace intentory.Controllers
             Context.groups.Add(viewmodel);
             Context.SaveChanges();
 
-          
-            return RedirectToAction("ProductGroup");
+            _notyf.Success("Product Group Inserted Successfully");
+            return RedirectToAction("Groups");
         }
 
         public IActionResult ProductGroupUpdate(long id)
@@ -61,7 +61,8 @@ namespace intentory.Controllers
         {
             Context.Entry(p).State = EntityState.Modified;
             Context.SaveChanges();
-            return RedirectToAction("ProductGroup");
+            _notyf.Warning("Product Group Updated Successfully");
+            return RedirectToAction("Groups");
         }
 
         public IActionResult ProductGroupDelete(long id)
@@ -69,8 +70,8 @@ namespace intentory.Controllers
             ProductGroup auth = Context.groups.Find(id);
             Context.Entry(auth).State = EntityState.Deleted;
             Context.SaveChanges();
-
-            return RedirectToAction("ProductGroup");
+            _notyf.Error("Product Group Deleted Successfully");
+            return RedirectToAction("Groups");
         }
 
         [HttpGet]
@@ -98,7 +99,7 @@ namespace intentory.Controllers
             };
             Context.measures.Add(viewmodel);
             Context.SaveChanges();
-
+            _notyf.Success("Unit Of Measure Added Successfully");
             return RedirectToAction("UnitOfMeasure");
         }
 
@@ -113,6 +114,8 @@ namespace intentory.Controllers
         {
             Context.Entry(m).State = EntityState.Modified;
             Context.SaveChanges();
+
+            _notyf.Warning("Unit Of Measure Updated Successfully");
             return RedirectToAction("UnitOfMeasure");
         }
 
@@ -121,7 +124,7 @@ namespace intentory.Controllers
             Measure auth = Context.measures.Find(id);
             Context.Entry(auth).State = EntityState.Deleted;
             Context.SaveChanges();
-
+            _notyf.Error("Unit Of Measure Deleted Successfully");
             return RedirectToAction("UnitOfMeasure");
         }
 
@@ -149,7 +152,7 @@ namespace intentory.Controllers
             };
             Context.products.Add(viewmodel);
             Context.SaveChanges();
-
+            _notyf.Success("Product Added Successfully");
             return RedirectToAction("Product");
         }
 
@@ -164,6 +167,7 @@ namespace intentory.Controllers
         {
             Context.Entry(p).State = EntityState.Modified;
             Context.SaveChanges();
+            _notyf.Warning("Product  Updated Successfully");
             return RedirectToAction("Product");
         }
 
@@ -172,7 +176,7 @@ namespace intentory.Controllers
             ProductAdd auth = Context.products.Find(id);
             Context.Entry(auth).State = EntityState.Deleted;
             Context.SaveChanges();
-
+            //_notyf.Error("Product Deleted Successfully");
             return RedirectToAction("UnitOfMeasure");
         }
 
@@ -200,7 +204,7 @@ namespace intentory.Controllers
             };
             Context.vendors.Add(viewmodel);
             Context.SaveChanges();
-
+            _notyf.Success("Vendor Added Successfully");
             return RedirectToAction("Vendor");
         }
 
@@ -215,6 +219,7 @@ namespace intentory.Controllers
         {
             Context.Entry(m).State = EntityState.Modified;
             Context.SaveChanges();
+            _notyf.Warning("Vendor Updated Successfully");
             return RedirectToAction("Vendor");
         }
 
@@ -223,8 +228,8 @@ namespace intentory.Controllers
             Vendor auth = Context.vendors.Find(id);
             Context.Entry(auth).State = EntityState.Deleted;
             Context.SaveChanges();
-
-            return RedirectToAction("UnitOfMeasure");
+            _notyf.Error("Vendor Deleted Successfully");
+            return RedirectToAction("Vendor");
         }
 
         public IActionResult ProductPurchase()
@@ -253,8 +258,8 @@ namespace intentory.Controllers
             };
             Context.purchases.Add(viewmodel);
             Context.SaveChanges();
-
-            return RedirectToAction("ProductPurchaseView");
+            _notyf.Success("Product Purchased Successfully");
+            return RedirectToAction("Purchases");
         }
 
         [HttpPost]
@@ -272,8 +277,8 @@ namespace intentory.Controllers
             };
             Context.sales.Add(viewmodel);
             Context.SaveChanges();
-
-            return RedirectToAction("ProductSalesView");
+            _notyf.Success("Product Sold Successfully");
+            return RedirectToAction("Sales");
         }
 
         public IActionResult ProductSales()
@@ -308,7 +313,7 @@ namespace intentory.Controllers
             };
             Context.customers.Add(viewmodel);
             Context.SaveChanges();
-
+            _notyf.Success("Customer Added Successfully");
             return RedirectToAction("Customer");
         }
 
@@ -323,6 +328,7 @@ namespace intentory.Controllers
         {
             Context.Entry(c).State = EntityState.Modified;
             Context.SaveChanges();
+            _notyf.Warning("Customer Added Updated Successfully");
             return RedirectToAction("Customer");
         }
 
@@ -331,8 +337,8 @@ namespace intentory.Controllers
             Customer auth = Context.customers.Find(id);
             Context.Entry(auth).State = EntityState.Deleted;
             Context.SaveChanges();
-
-            return RedirectToAction("UnitOfMeasure");
+            _notyf.Error("Customer Deleted Successfully");
+            return RedirectToAction("Customer");
         }
 
         [HttpPost]
@@ -471,14 +477,14 @@ namespace intentory.Controllers
         }
 
         [HttpGet]
-        public IActionResult ProductSalesView()
+        public IActionResult Sales()
         {
             var sales = Context.sales.Include("ProductAdd").Include("Customer").ToList();
             return View(sales);
         }
 
         [HttpGet]
-        public IActionResult ProductPurchaseView()
+        public IActionResult Purchases()
         {
             var purchases = Context.purchases.Include("ProductAdd").Include("Vendor").ToList();
             return View(purchases);
